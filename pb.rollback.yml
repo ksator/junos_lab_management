@@ -7,4 +7,4 @@
     - name: rollback junos active configuration
       junos_config:
           provider: "{{ credentials }}"
-          rollback: 1
+          rollback: "{{ rbid }}"
