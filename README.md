@@ -70,7 +70,7 @@ The playbook [**pb.collect.configuration.yml**](pb.collect.configuration.yml) co
 
 Run this command to collect the junos configuration files for a device/group.  
 ```
-ansible-playbook pb.collect.configuration.yml --limit QFX5100
+ansible-playbook pb.collect.configuration.yml --limit QFX10K2
 ```
 
 Run this command to collect the junos configuration files for the whole network
@@ -85,32 +85,22 @@ ls configuration/
 
 ### Update the golden configuration files
 
-The golden configuration files are the configuration files that will be loaded at the beginning of each demo. 
-
 The playbook [**pb.collect.golden.yml**](pb.collect.golden.yml) collects the running configuration on the junos devices and updates the directory [**golden_configuration**](golden_configuration) with these files.
-
-Run this command to do it for a device/group
 ```
-ansible-playbook pb.collect.golden.yml --limit QFX5110
-```
-
-Run this command to do it for the whole network
-```
-ansible-playbook pb.collect.golden.yml 
+ansible-playbook pb.collect.golden.yml --extra-vars lab=bgp
 ```
 
 The golden configuration files are available in the directory [**golden_configuration**](golden_configuration)
 ```
-ls golden_configuration
+ls golden_configuration/bgp
 ```
 
 
 ### Overwrite the running configuration on junos devices with a golden configuration
 
 The playbook [**pb.deploy.golden.yml**](pb.deploy.golden.yml) overwrites the running configuration on the junos devices with the files in the directory [**golden_configuration**](golden_configuration).  
-You can use it at the beginning of each demo to restore the golden configuration files on the Junos devices.   
 ```
-ansible-playbook pb.deploy.golden.yml
+ansible-playbook pb.deploy.golden.yml --extra-vars lab=bgp
 ```
 
 The playbook [**pb.configure.golden.yml**](pb.configure.golden.yml) backs-up the current running configuration from the remote devices in the directory [**backup**](backup) before applying the golden configuration. 
@@ -118,7 +108,7 @@ The playbook [**pb.configure.golden.yml**](pb.configure.golden.yml) backs-up the
 ls backup/
 ```
 
-### How to configure junos devices with set/delete commands
+### Configure junos devices with set/delete commands
 
 The playbook [**pb.configure.lines.yml**](pb.configure.lines.yml) configures the junos devices with set/delete commands. 
 
@@ -136,13 +126,13 @@ ansible-playbook pb.configure.lines.yml --check
 In order to know if a junos device will have a configuration change if you execute the playbook [**pb.configure.lines.yml**](pb.configure.lines.yml), and also to know the difference between the desired state described in the playbook [**pb.configure.lines.yml**](pb.configure.lines.yml) and the device actual state, run this command.  
 This won’t change the junos configuration.  
 ```
-ansible-playbook pb.configure.lines.yml --check --diff --limit QFX10K2-176
+ansible-playbook pb.configure.lines.yml --check --diff --limit demo-qfx10k2-11
 ```
 
 Run this command to execute the playbook [**pb.configure.lines.yml**](pb.configure.lines.yml) for one device/group.  
 This will configure the device/group with the list of set/delete commands. 
 ```
-ansible-playbook pb.configure.lines.yml --limit DC2
+ansible-playbook pb.configure.lines.yml --limit QFX10K2
 ```
 
 Run this command to execute the playbook [**pb.configure.lines.yml**](pb.configure.lines.yml).  
@@ -156,55 +146,7 @@ The playbook [**pb.configure.lines.yml**](pb.configure.lines.yml) backs-up the c
 ls backup/
 ```
 
-### How to configure devices with telemetry
-
-The directory [**templates**](templates) has the jinja templates.  
-
-The template [**telemetry.j2**](/templates/telemetry.j2) is used by the playbook [**pb.configure.telemetry.yml**](pb.configure.telemetry.yml) to generate the junos configuration for streaming telemetry.  
-```
-more templates/telemetry.j2
-```
-
-Run this command to render the telemetry template locally.  
-This will generate the junos telemetry configuration files, without actually configuring the junos devices.  
-The directory [**render**](render) has the files generated from the jinja templates and variables.  
-```
-ansible-playbook pb.configure.telemetry.yml --tag render
-```
-```
-ls render/telemetry/
-```
-
-In order to know which junos devices will have a configuration change if you execute the playbook [**pb.configure.telemetry.yml**](pb.configure.telemetry.yml), execute it in dry run mode.  
-This won’t change the junos configuration.  
-```
-ansible-playbook pb.configure.telemetry.yml --check
-```
-
-In order to know if a junos device will have a configuration change if you execute the playbook [**pb.configure.telemetry.yml**](pb.configure.telemetry.yml), and also to know the difference between the desired state and the device actual state, run this command.  
-This won’t change the junos configuration.  
- ```
-ansible-playbook pb.configure.telemetry.yml --check --diff --limit QFX10K2-176
-```
-
-Run this command to execute the playbook [**pb.configure.telemetry.yml**](pb.configure.telemetry.yml) for one device/group.  
-This will configure telemetry on the device/group
-```
-ansible-playbook pb.configure.telemetry.yml --limit QFX10K2-176
-```
-
-Run this command to execute the playbook [**pb.configure.telemetry.yml**](pb.configure.telemetry.yml).  
-This will configure telemetry on the whole network.
-```
-ansible-playbook pb.configure.telemetry.yml
-```
-
-The playbook [**pb.configure.telemetry.yml**](pb.configure.telemetry.yml) backs-up the current running configuration from the remote devices in the directory [**backup**](backup) before applying the configuration change. 
-```
-ls backup/
-```
-
-### rollback the running configuration to a previous state
+### rollback the running configuration to a previous version
 
 The playbook [**pb.rollback.yml**](pb.rollback.yml) playbook performs a configuration rollback on junos devices.
 
@@ -232,14 +174,3 @@ ansible-playbook pb.check.ports.availability.yml
 https://github.com/ksator?tab=repositories  
 https://gitlab.com/users/ksator/projects  
 https://gist.github.com/ksator/  
-
-
-
-
-
-
-
-
-
-
-
