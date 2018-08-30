@@ -21,17 +21,13 @@ This repository has automation content to manage a lab with Junos devices.
    - The file [**credentials.py**](python/credentials.py) gets the devices username and password from the ansible variables file  [**credentials.yml**](/group_vars/JUNOS/credentials.yml)
    - The file [**locate.mac.address.py**](python/locate.mac.address.py) indicates where a given mac address in the network is located.
 
-# How to use this repository
+# Requirements to use this repository
 
-### Clone the repository:
+### Clone the repository and Install requirements: 
+
 ```
 git clone https://github.com/ksator/xxxxxx.git
 cd xxxxx/
-```
-
-### Install requirements: 
-
-```
 sudo pip install requirements.txt -r 
 ansible-galaxy install Juniper.junos,2.1.0
 ```
@@ -41,6 +37,8 @@ ansible --version
 ansible-galaxy Juniper.junos list
 pip list
 ```
+# How to use this repository
+
 ### Locate a mac address
 
 Execute this [**python script**](python/locate.mac.address.py) to locate a mac address in the network
