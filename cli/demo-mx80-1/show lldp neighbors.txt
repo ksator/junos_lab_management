@@ -1,0 +1,6 @@
+
+Local Interface    Parent Interface    Chassis Id          Port info          System Name
+fxp0               -                   00:23:9c:0a:55:00   537
+xe-0/0/0           -                   38:4f:49:08:73:f7   524                demo-qfx10k2-11     
+xe-0/0/3           -                   78:fe:3d:d5:86:c0   558                demo-ex3300-1       
+xe-0/0/1           -                   7c:25:86:f5:5e:38   589                demo-qfx10k2-12     

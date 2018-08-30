@@ -1,0 +1,55 @@
+
+Interface               Admin Link Proto    Local                 Remote
+et-0/0/0                up    up
+et-0/0/0.0              up    up   inet     192.168.20.4/31 
+gr-0/0/0                up    up
+pfe-0/0/0               up    up
+pfe-0/0/0.16383         up    up   inet    
+                                   inet6   
+pfh-0/0/0               up    up
+pfh-0/0/0.16383         up    up   inet    
+pfh-0/0/0.16384         up    up   inet    
+sxe-0/0/0               up    up
+sxe-0/0/1               up    up
+sxe-0/0/2               up    up
+xe-0/0/31:0             up    up
+xe-0/0/31:0.0           up    up   inet     192.168.40.1/31 
+xe-0/0/31:1             up    up
+xe-0/0/31:1.0           up    up   inet     192.168.40.3/31 
+xe-0/0/31:2             up    down
+xe-0/0/31:3             up    down
+et-0/0/33               up    up
+et-0/0/33.0             up    up   inet     192.168.20.6/31 
+et-0/0/34               up    up
+et-0/0/34.0             up    up   inet     192.168.20.0/31 
+et-0/0/35               up    up
+et-0/0/35.0             up    up   inet     192.168.20.2/31 
+bme0                    up    up
+bme0.0                  up    up   inet     128.0.0.1/2     
+                                            128.0.0.4/2     
+                                            128.0.0.63/2    
+cbp0                    up    up
+dsc                     up    up
+em0                     up    up
+em0.0                   up    up   inet     172.25.90.14/24 
+em1                     up    down
+em2                     up    up
+em2.32768               up    up   inet     192.168.1.2/24  
+em3                     up    up
+esi                     up    up
+gre                     up    up
+ipip                    up    up
+irb                     up    up
+lo0                     up    up
+lo0.0                   up    up   inet     192.168.255.102     --> 0/0
+                                   inet6    fe80::7e25:860f:fcf5:5e38
+lo0.16385               up    up   inet    
+lsi                     up    up
+mtun                    up    up
+pimd                    up    up
+pime                    up    up
+pip0                    up    up
+ptp0                    up    down
+tap                     up    up
+vtep                    up    up
+vtep.32768              up    up  

@@ -1,0 +1,7 @@
+---
+cli:
+    - "show chassis hardware"
+    - "show version"
+    - "show lldp neighbors"
+    - "show bgp neighbor"
+    - "show interfaces terse"

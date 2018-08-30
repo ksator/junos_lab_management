@@ -1,0 +1,27 @@
+
+Hostname: demo-mx80-2
+Model: mx80-p
+Junos: 17.4R1.16
+JUNOS Base OS boot [17.4R1.16]
+JUNOS Base OS Software Suite [17.4R1.16]
+JUNOS Crypto Software Suite [17.4R1.16]
+JUNOS Packet Forwarding Engine Support (MX80) [17.4R1.16]
+JUNOS Web Management [17.4R1.16]
+JUNOS Online Documentation [17.4R1.16]
+JUNOS SDN Software Suite [17.4R1.16]
+JUNOS Services Application Level Gateways [17.4R1.16]
+JUNOS Services COS [17.4R1.16]
+JUNOS Services Jflow Container package [17.4R1.16]
+JUNOS Services Stateful Firewall [17.4R1.16]
+JUNOS Services NAT [17.4R1.16]
+JUNOS Services RPM [17.4R1.16]
+JUNOS Services Captive Portal and Content Delivery Container package [17.4R1.16]
+JUNOS Macsec Software Suite [17.4R1.16]
+JUNOS Services Crypto [17.4R1.16]
+JUNOS Services IPSec [17.4R1.16]
+JUNOS DP Crypto Software Software Suite [17.4R1.16]
+JUNOS py-base-powerpc [17.4R1.16]
+JUNOS py-extensions-powerpc [17.4R1.16]
+JUNOS jsd [powerpc-17.4R1.16-jet-1]
+JUNOS Kernel Software Suite [17.4R1.16]
+JUNOS Routing Software Suite [17.4R1.16]

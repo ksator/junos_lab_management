@@ -1,0 +1,18 @@
+
+Hardware inventory:
+Item             Version  Part number  Serial number     Description
+Chassis                                H7822             MX80-P
+Midplane         REV 04   711-044315   CACN5759          MX80-P
+PEM 0            Rev 05   740-028288   1GA74350884       AC Power Entry Module
+Routing Engine            BUILTIN      BUILTIN           Routing Engine
+TFEB 0                    BUILTIN      BUILTIN           Forwarding Engine Processor
+  QXM 0          REV 07   711-028408   CADP2081          MPC QXM
+FPC 0                     BUILTIN      BUILTIN           MPC BUILTIN
+  MIC 0                   BUILTIN      BUILTIN           4x 10GE XFP
+    PIC 0                 BUILTIN      BUILTIN           4x 10GE XFP
+      Xcvr 0     REV 01   740-014289   AD0949M00PB       XFP-10G-SR
+      Xcvr 1     REV 01   740-014289   T08G53424         XFP-10G-SR
+      Xcvr 2              NON-JNPR     T14H07113         XFP-10G-SR
+      Xcvr 3     REV 02   740-014289   C813XU04J         XFP-10G-SR
+FPC 1                     BUILTIN      BUILTIN           MPC BUILTIN
+Fan Tray                                                 Fan Tray

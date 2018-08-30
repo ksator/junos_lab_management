@@ -1,0 +1,75 @@
+set version 17.4R1.16
+set groups POC_Lab system host-name demo-qfx5110-8
+set groups POC_Lab system domain-name amerpoc.jnpr.net
+set groups POC_Lab system backup-router 172.25.90.1
+set groups POC_Lab system time-zone America/New_York
+set groups POC_Lab system authentication-order password
+set groups POC_Lab system root-authentication encrypted-password "$1$f1VUEVN3$P9LmFmM90qmJSEsdPZJtA0"
+set groups POC_Lab system name-server 172.25.124.10
+set groups POC_Lab system name-server 172.29.131.60
+set groups POC_Lab system login message "Americas POC"
+set groups POC_Lab system login user lab uid 2000
+set groups POC_Lab system login user lab class superuser
+set groups POC_Lab system login user lab authentication encrypted-password "$1$gz.0IbEX$wXEZsNN169oWGVRSzsWEt1"
+set groups POC_Lab system login user admin uid 2001
+set groups POC_Lab system login user admin class superuser
+set groups POC_Lab system login user admin authentication encrypted-password "$1$iF6/a6kj$qt3NdAF7s0L.AFYw.vdIO."
+set groups POC_Lab system services ftp
+set groups POC_Lab system services ssh root-login allow
+set groups POC_Lab system services ssh protocol-version v2
+set groups POC_Lab system services telnet
+set groups POC_Lab system services xnm-clear-text
+set groups POC_Lab system services netconf ssh
+set groups POC_Lab system ntp server 172.25.124.10 prefer
+set groups POC_Lab interfaces em0 unit 0 family inet address 172.25.90.18/24
+set groups POC_Lab snmp community public
+set groups POC_Lab routing-options static route 0.0.0.0/0 next-hop 172.25.90.1
+set groups JUMBO_FRAMES interfaces <*-*> mtu 9216
+set groups __contrail_basic__ snmp community public authorization read-only
+set apply-groups POC_Lab
+set apply-groups JUMBO_FRAMES
+set apply-groups __contrail_basic__
+set system time-zone US/Eastern
+set system services ssh
+set system services netconf ssh
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system ntp
+set interfaces xe-0/0/33 unit 0 family ethernet-switching interface-mode access
+set interfaces xe-0/0/33 unit 0 family ethernet-switching vlan members vlan10
+set interfaces xe-0/0/34 unit 0 family ethernet-switching interface-mode access
+set interfaces xe-0/0/34 unit 0 family ethernet-switching vlan members vlan10
+set interfaces et-0/0/48 unit 0 family inet address 192.168.10.7/31
+set interfaces et-0/0/49 unit 0 family inet address 192.168.20.7/31
+set interfaces irb unit 10 family inet address 10.1.0.129/26
+set interfaces lo0 unit 0 family inet address 192.168.255.4/32
+set snmp location ""
+set snmp contact ""
+set snmp community public authorization read-only
+set routing-options router-id 192.168.255.4
+set routing-options autonomous-system 64512
+set protocols bgp group IPFAB-UNDER type external
+set protocols bgp group IPFAB-UNDER mtu-discovery
+set protocols bgp group IPFAB-UNDER export BGP-IPFAB-UNDER-EXP
+set protocols bgp group IPFAB-UNDER local-as 65004
+set protocols bgp group IPFAB-UNDER multipath multiple-as
+set protocols bgp group IPFAB-UNDER neighbor 192.168.10.6 description 5c10-qfx2
+set protocols bgp group IPFAB-UNDER neighbor 192.168.10.6 peer-as 65301
+set protocols bgp group IPFAB-UNDER neighbor 192.168.20.6 description 5c10-qfx3
+set protocols bgp group IPFAB-UNDER neighbor 192.168.20.6 peer-as 65302
+set protocols lldp interface all
+set protocols lldp-med interface all
+set protocols igmp-snooping vlan default
+set policy-options policy-statement BGP-IPFAB-UNDER-EXP term LOOPBACK from protocol direct
+set policy-options policy-statement BGP-IPFAB-UNDER-EXP term LOOPBACK from interface lo0.0
+set policy-options policy-statement BGP-IPFAB-UNDER-EXP term LOOPBACK then community set IPFAB-LEAF
+set policy-options policy-statement BGP-IPFAB-UNDER-EXP term LOOPBACK then accept
+set policy-options policy-statement BGP-IPFAB-UNDER-EXP term SERVERS from protocol direct
+set policy-options policy-statement BGP-IPFAB-UNDER-EXP term SERVERS from interface irb.10
+set policy-options policy-statement BGP-IPFAB-UNDER-EXP term SERVERS then community set IPFAB-LEAF
+set policy-options policy-statement BGP-IPFAB-UNDER-EXP term SERVERS then accept
+set policy-options policy-statement BGP-IPFAB-UNDER-EXP then reject
+set policy-options community IPFAB-LEAF members 64512:1001
+set vlans vlan10 vlan-id 10
+set vlans vlan10 l3-interface irb.10

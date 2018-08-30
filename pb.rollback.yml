@@ -1,0 +1,10 @@
+- name: rollback junos active configuration
+  hosts: JUNOS
+  connection: local
+  gather_facts: no
+  tasks:
+  
+    - name: rollback junos active configuration
+      junos_config:
+          provider: "{{ credentials }}"
+          rollback: 1

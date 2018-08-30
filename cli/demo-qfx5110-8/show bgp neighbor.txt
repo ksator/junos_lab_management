@@ -1,0 +1,90 @@
+
+Peer: 192.168.10.6+179 AS 65301 Local: 192.168.10.7+61877 AS 65004
+  Description: 5c10-qfx2
+  Group: IPFAB-UNDER           Routing-Instance: master
+  Forwarding routing-instance: master  
+  Type: External    State: Established    Flags: <Sync>
+  Last State: OpenConfirm   Last Event: RecvKeepAlive
+  Last Error: Cease
+  Export: [ BGP-IPFAB-UNDER-EXP ] 
+  Options: <Preference PeerAS Multipath LocalAS Refresh>
+  Options: <MtuDiscovery MultipathAs>
+  Holdtime: 90 Preference: 170 Local AS: 65004 Local System AS: 64512
+  Number of flaps: 1
+  Last flap event: Stop
+  Error: 'Cease' Sent: 1 Recv: 0
+  Peer ID: 192.168.255.101 Local ID: 192.168.255.4     Active Holdtime: 90
+  Keepalive Interval: 30         Group index: 0    Peer index: 1    SNMP index: 0     
+  I/O Session Thread: bgpio-0 State: Enabled
+  BFD: disabled, down
+  Local Interface: et-0/0/48.0                      
+  NLRI for restart configured on peer: inet-unicast
+  NLRI advertised by peer: inet-unicast
+  NLRI for this session: inet-unicast
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  Restart flag received from the peer: Notification
+  NLRI that restart is negotiated for: inet-unicast
+  NLRI of received end-of-rib markers: inet-unicast
+  NLRI of all end-of-rib markers sent: inet-unicast
+  Peer does not support LLGR Restarter functionality
+  Peer supports 4 byte AS extension (peer-as 65301)
+  Peer does not support Addpath
+  Table inet.0 Bit: 30000
+    RIB State: BGP restart is complete
+    Send state: in sync
+    Active prefixes:              8
+    Received prefixes:            9
+    Accepted prefixes:            9
+    Suppressed due to damping:    0
+    Advertised prefixes:          1
+  Last traffic (seconds): Received 4764662 Sent 1882088 Checked 4764662
+  Input messages:  Total 71439	Updates 154	Refreshes 0	Octets 1361749
+  Output messages: Total 72126	Updates 3	Refreshes 0	Octets 1370506
+  Output Queue[2]: 0            (inet.0, inet-unicast)
+
+Peer: 192.168.20.6+179 AS 65302 Local: 192.168.20.7+62934 AS 65004
+  Description: 5c10-qfx3
+  Group: IPFAB-UNDER           Routing-Instance: master
+  Forwarding routing-instance: master  
+  Type: External    State: Established    Flags: <Sync>
+  Last State: OpenConfirm   Last Event: RecvKeepAlive
+  Last Error: Cease
+  Export: [ BGP-IPFAB-UNDER-EXP ] 
+  Options: <Preference PeerAS Multipath LocalAS Refresh>
+  Options: <MtuDiscovery MultipathAs>
+  Holdtime: 90 Preference: 170 Local AS: 65004 Local System AS: 64512
+  Number of flaps: 1
+  Last flap event: Stop
+  Error: 'Cease' Sent: 1 Recv: 0
+  Peer ID: 192.168.255.102 Local ID: 192.168.255.4     Active Holdtime: 90
+  Keepalive Interval: 30         Group index: 0    Peer index: 0    SNMP index: 1     
+  I/O Session Thread: bgpio-0 State: Enabled
+  BFD: disabled, down
+  Local Interface: et-0/0/49.0                      
+  NLRI for restart configured on peer: inet-unicast
+  NLRI advertised by peer: inet-unicast
+  NLRI for this session: inet-unicast
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  Restart flag received from the peer: Notification
+  NLRI that restart is negotiated for: inet-unicast
+  NLRI of received end-of-rib markers: inet-unicast
+  NLRI of all end-of-rib markers sent: inet-unicast
+  Peer does not support LLGR Restarter functionality
+  Peer supports 4 byte AS extension (peer-as 65302)
+  Peer does not support Addpath
+  Table inet.0 Bit: 30000
+    RIB State: BGP restart is complete
+    Send state: in sync
+    Active prefixes:              8
+    Received prefixes:            9
+    Accepted prefixes:            9
+    Suppressed due to damping:    0
+    Advertised prefixes:          1
+  Last traffic (seconds): Received 4764662 Sent 1882088 Checked 4764662
+  Input messages:  Total 71458	Updates 173	Refreshes 0	Octets 1362933
+  Output messages: Total 72126	Updates 3	Refreshes 0	Octets 1370506
+  Output Queue[2]: 0            (inet.0, inet-unicast)

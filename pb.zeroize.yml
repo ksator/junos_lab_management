@@ -1,0 +1,10 @@
+- name: zeroize junos configuration
+  hosts: demo-qfx5100-7
+  connection: local
+  gather_facts: no
+  tasks:
+  
+    - name: zero out the current configuration
+      junos_config:
+          provider: "{{ credentials }}"
+          zeroize: yes

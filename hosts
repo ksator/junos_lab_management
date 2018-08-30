@@ -1,0 +1,30 @@
+[JUNOS:children]
+QFX
+MX
+
+[MX:children]
+MX80
+
+[QFX:children]
+QFX5100
+QFX5110
+QFX10K2
+
+[MX80]
+demo-mx80-1 ansible_host=172.25.90.11
+demo-mx80-2 ansible_host=172.25.90.12
+
+[QFX10K2]
+demo-qfx10k2-11 ansible_host=172.25.90.13
+demo-qfx10k2-12 ansible_host=172.25.90.14
+demo-qfx10k2-13 ansible_host=172.25.90.15
+
+[QFX5100]
+demo-qfx5100-7 ansible_host=172.25.90.16
+demo-qfx5100-8 ansible_host=172.25.90.17
+
+[QFX5110]
+demo-qfx5110-8 ansible_host=172.25.90.18
+
+
+
