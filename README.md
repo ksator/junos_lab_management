@@ -4,40 +4,22 @@ This repository has automation content to manage a lab with Junos devices.
 
 # Repository structure 
 
-### Ansible inventory file
-The ansible inventory file is [**hosts**](hosts)  
-
-### Ansible configuration file
-The ansible configuration file is [**ansible.cfg**](ansible.cfg)
-
-### variables 
-The variables are yml files under the [**group_vars**](group_vars) directory.  
-
-### Ansible Playbooks
-The ansible playbooks are at the root of the repository.  
-All playbooks are named **pb.*.yml**      
-
-### cli directory 
-The directory [**cli**](cli) has the output of the Junos show commands from the playbook [**pb.collect.cli.yml**](pb.collect.cli.yml)
-
-### configuration directory
-The directory [**configuration**](configuration) has the junos configuration files collected when we run the playbook [**pb.collect.configuration.yml**](pb.collect.configuration.yml) 
-
-### backup directory
-The directory [**backup**](backup) has the junos configuration files automatically backed up by the playbooks: 
+- The ansible inventory file is [**hosts**](hosts)  
+- The ansible configuration file is [**ansible.cfg**](ansible.cfg)
+- The variables are yml files under the [**group_vars**](group_vars) directory.  
+- The ansible playbooks are at the root of the repository. All playbooks are named **pb.*.yml**      
+- The directory [**cli**](cli) has the output of the Junos show commands collected from the playbook [**pb.collect.cli.yml**](pb.collect.cli.yml)
+- The directory [**configuration**](configuration) has the junos configuration files collected when we run the playbook [**pb.collect.configuration.yml**](pb.collect.configuration.yml) 
+- The directory [**backup**](backup) has the junos configuration files automatically backed up by the playbooks: 
   - [**pb.configure.lines.yml**](pb.configure.lines.yml) 
   - [**pb.configure.golden.yml**](pb.configure.golden.yml)
-
-### golden.configuration directory
-The directory [**golden_configuration**](golden_configuration) has the junos configuration files for various demo.
-- The playbook [**pb.collect.golden.configuration.yml**](pb.collect.golden.configuration.yml) collects the running configuration on the junos devices and updates the directory [**golden.configuration**](golden_configuration) with these files.
-- The playbook [**pb.deploy.golden.yml**](pb.deploy.golden.yml) overwrites the running configuration on the junos devices with the files in the directory [**golden_configuration**](golden_configuration)
-
-### python directory
-The directory [**python**](python) has the python scripts
-- The file [**inventory.py**](python/inventory.py) creates a python list of devices ip address based on the ansible inventory file [**hosts**](hosts)
-- The file [**credentials.py**](python/credentials.py) gets the devices username and password from the ansible variables file  [**credentials.yml**](/group_vars/JUNOS/credentials.yml)
-- The file [**locate.mac.address.py**](python/locate.mac.address.py) indicates where a given mac address in the network is located.
+- The directory [**golden_configuration**](golden_configuration) has the junos configuration files for various demo.
+  - The playbook [**pb.collect.golden.configuration.yml**](pb.collect.golden.configuration.yml) collects the running configuration on the junos devices and updates the directory [**golden.configuration**](golden_configuration) with these files.
+  - The playbook [**pb.deploy.golden.yml**](pb.deploy.golden.yml) overwrites the running configuration on the junos devices with the files in the directory [**golden_configuration**](golden_configuration)
+- The directory [**python**](python) has the python scripts
+   - The file [**inventory.py**](python/inventory.py) creates a python list of devices ip address based on the ansible inventory file [**hosts**](hosts)
+   - The file [**credentials.py**](python/credentials.py) gets the devices username and password from the ansible variables file  [**credentials.yml**](/group_vars/JUNOS/credentials.yml)
+   - The file [**locate.mac.address.py**](python/locate.mac.address.py) indicates where a given mac address in the network is located.
 
 # How to use this repository
 
