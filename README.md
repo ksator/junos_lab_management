@@ -27,6 +27,7 @@ pip list
 ```
 git clone https://github.com/ksator/xxxxxx.git
 cd xxxxx/
+pip install -r requirements.txt
 ```
 ### 
 
