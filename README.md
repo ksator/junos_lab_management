@@ -23,6 +23,24 @@ This repository has automation content to manage a lab with Junos devices.
 
 # How to use this repository
 
+### Clone the repository:
+```
+git clone https://github.com/ksator/xxxxxx.git
+cd xxxxx/
+```
+
+### Install requirements: 
+
+```
+sudo pip install requirements.txt -r 
+ansible-galaxy install Juniper.junos,2.1.0
+```
+Verify:
+```
+ansible --version
+ansible-galaxy Juniper.junos list
+pip list
+```
 ### Locate a mac address
 
 Execute this [**python script**](python/locate.mac.address.py) to locate a mac address in the network
@@ -211,8 +229,6 @@ Run this command to execute this playbook for the whole network:
 ansible-playbook pb.check.ports.availability.yml
 ```
 
-
-
 ### Looking for more Junos automation examples:
 
 https://github.com/ksator?tab=repositories  
@@ -226,35 +242,6 @@ https://gist.github.com/ksator/
 
 
 
-
-
-
-
-### Clone the repository:
-```
-git clone https://github.com/ksator/xxxxxx.git
-cd xxxxx/
-pip install -r requirements.txt
-```
-###
-
-
-### Install requirements: 
-
-From ubuntu 16.04
-
-```
-sudo apt-get update
-sudo apt-get upgrade
-sudo pip install requirements.txt -r 
-ansible-galaxy install Juniper.junos,2.1.0
-```
-Verify:
-```
-ansible --version
-ansible-galaxy Juniper.junos list
-pip list
-```
 
 
 
