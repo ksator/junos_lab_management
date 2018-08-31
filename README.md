@@ -23,15 +23,19 @@ This repository has automation content to manage a lab with Junos devices.
 
 # Requirements to use this repository
 
-### Clone the repository and Install requirements: 
+### Clone the repository 
+
 
 ```
 git clone https://github.com/ksator/xxxxxx.git
 cd xxxxx/
+```
+### Install requirements
+```
 sudo pip install requirements.txt -r 
 ansible-galaxy install Juniper.junos,2.1.0
 ```
-Verify:
+### Verify
 ```
 ansible --version
 ansible-galaxy Juniper.junos list
@@ -66,7 +70,7 @@ ls cli
 
 ### Collect the junos configuration files
 
-The playbook [**pb.collect.configuration.yml**](pb.collect.configuration.yml) collects the Junos configuration in set, xml, json and text formats, and saves the configuration files in the [**directory configuration**](configuration)  
+The playbook [**pb.collect.configuration.yml**](pb.collect.configuration.yml) collects the Junos configuration in set, xml, json and text formats, and saves the configuration files in the directory [**configuration**](configuration)  
 
 Run this command to collect the junos configuration files for a device/group.  
 ```
@@ -80,27 +84,47 @@ ansible-playbook pb.collect.configuration.yml
 
 The configuration files are available in the directory [**configuration**](configuration)
 ```
-ls configuration/
+ls configuration
 ```
 
 ### Update the golden configuration files
 
 The playbook [**pb.collect.golden.yml**](pb.collect.golden.yml) collects the running configuration on the junos devices and updates the directory [**golden_configuration**](golden_configuration) with these files.
+
+Example 1: 
+Run this command to collect the configuration running on the junos devices and updates the directory [**golden_configuration/bgp**](golden_configuration/bgp) with these files.
 ```
 ansible-playbook pb.collect.golden.yml --extra-vars lab=bgp
 ```
-
-The golden configuration files are available in the directory [**golden_configuration**](golden_configuration)
+The golden configuration files are available in the directory [**golden_configuration/bgp**](golden_configuration/bgp)
 ```
 ls golden_configuration/bgp
+```
+Example 2: 
+Run this command to collect the running configuration on the junos devices and updates the directory [**golden_configuration/ospf**](golden_configuration/ospf) with these files.
+```
+ansible-playbook pb.collect.golden.yml --extra-vars lab=ospf
+```
+The golden configuration files are available in the directory [**golden_configuration/ospf**](golden_configuration/ospf)
+```
+ls golden_configuration/ospf
 ```
 
 
 ### Overwrite the running configuration on junos devices with a golden configuration
 
 The playbook [**pb.deploy.golden.yml**](pb.deploy.golden.yml) overwrites the running configuration on the junos devices with the files in the directory [**golden_configuration**](golden_configuration).  
+
+Example 1: 
+Run this command to overwrite the running configuration on the junos devices with the files in the directory [**golden_configuration/bgp**](golden_configuration/bgp).  
 ```
 ansible-playbook pb.deploy.golden.yml --extra-vars lab=bgp
+```
+
+Example 2: 
+Run this command to overwrite the running configuration on the junos devices with the files in the directory [**golden_configuration/ospf**](golden_configuration/ospf).  
+```
+ansible-playbook pb.deploy.golden.yml --extra-vars lab=ospf
 ```
 
 The playbook [**pb.configure.golden.yml**](pb.configure.golden.yml) backs-up the current running configuration from the remote devices in the directory [**backup**](backup) before applying the golden configuration. 
