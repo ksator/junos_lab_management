@@ -1,5 +1,5 @@
 - name: zeroize junos configuration
-  hosts: demo-qfx5100-7
+  hosts: JUNOS
   connection: local
   gather_facts: no
   tasks:
