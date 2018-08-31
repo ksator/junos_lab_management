@@ -154,13 +154,13 @@ In order to know which junos devices will have a configuration change if you loa
 This won’t load the golden configuration.
 
 ```
-ansible-playbook pb.deploy.golden.yml --check
+ansible-playbook pb.deploy.golden.yml --extra-vars lab=ospf --check
 ```
 Run this command to do it for one device/group. 
 This won’t load the golden configuration.
 
 ```
-ansible-playbook pb.deploy.golden.yml --check --limit demo-qfx10k2-11
+ansible-playbook pb.deploy.golden.yml ---extra-vars lab=ospf -check --limit demo-qfx10k2-11
 ```
 
 ### Get the difference between the configuration running on devices and their golden configuration
@@ -168,12 +168,12 @@ ansible-playbook pb.deploy.golden.yml --check --limit demo-qfx10k2-11
 In order to know if a junos device will have a configuration change if you load its golden configuration file, and also to know the difference between its running configuration and its golden configuration, run this command.
 This won’t change the junos configuration.
 ```
-ansible-playbook pb.deploy.golden.yml --check --diff --limit demo-qfx10k2-11
+ansible-playbook pb.deploy.golden.yml --extra-vars lab=bgp --check --diff --limit demo-qfx10k2-11
 ```
 Run this command to do it for the whole network.
 This won’t load the golden configuration.
 ```
-ansible-playbook pb.deploy.golden.yml --check --diff 
+ansible-playbook pb.deploy.golden.yml --extra-vars lab=bgp --check --diff 
 ```
 
 ### Configure junos devices with set/delete commands

@@ -1,4 +1,4 @@
-<configuration changed-seconds="1535585813" changed-localtime="2018-08-29 23:36:53 UTC">
+<configuration changed-seconds="1535648672" changed-localtime="2018-08-30 17:04:32 UTC">
     <version>17.4R1.16</version>
     <groups>
         <name>POC_Lab</name>
@@ -199,7 +199,7 @@
                     <multipath>
                     </multipath>
                     <neighbor>
-                        <name>192.168.255.1</name>
+                        <name>192.168.255.102</name>
                         <peer-as>64512</peer-as>
                     </neighbor>
                     <neighbor>
@@ -215,7 +215,7 @@
                         <peer-as>64512</peer-as>
                     </neighbor>
                     <neighbor>
-                        <name>192.168.255.102</name>
+                        <name>192.168.255.1</name>
                         <peer-as>64512</peer-as>
                     </neighbor>
                     <neighbor>
@@ -249,13 +249,60 @@
     </groups>
     <groups>
         <name>__contrail_overlay_evpn__</name>
+        <interfaces>
+            <interface>
+                <name>xe-0/0/35</name>
+                <flexible-vlan-tagging/>
+                <native-vlan-id>4094</native-vlan-id>
+                <encapsulation>extended-vlan-bridge</encapsulation>
+                <unit>
+                    <name>0</name>
+                    <vlan-id>4094</vlan-id>
+                </unit>
+            </interface>
+        </interfaces>
         <protocols>
             <evpn>
+                <vni-options>
+                    <vni>
+                        <name>5</name>
+                        <vrf-target>
+                            <community>target:64512:8000004</community>
+                        </vrf-target>
+                    </vni>
+                </vni-options>
                 <encapsulation>vxlan</encapsulation>
                 <multicast-mode>ingress-replication</multicast-mode>
                 <extended-vni-list>all</extended-vni-list>
             </evpn>
         </protocols>
+        <policy-options>
+            <policy-statement>
+                <name>_contrail_vlan100-l2-5-import</name>
+                <term>
+                    <name>t1</name>
+                    <from>
+                        <community>target_64512_8000004</community>
+                    </from>
+                    <then>
+                        <accept/>
+                    </then>
+                </term>
+            </policy-statement>
+            <policy-statement>
+                <name>_contrail_vlan100-l2-5-export</name>
+                <term>
+                    <name>t1</name>
+                    <then>
+                        <accept/>
+                    </then>
+                </term>
+            </policy-statement>
+            <community>
+                <name>target_64512_8000004</name>
+                <members>target:64512:8000004</members>
+            </community>
+        </policy-options>
         <switch-options>
             <vtep-source-interface>
                 <interface-name>lo0.0</interface-name>
@@ -263,12 +310,26 @@
             <route-distinguisher>
                 <rd-type>192.168.255.2:1</rd-type>
             </route-distinguisher>
+            <vrf-import>_contrail_vlan100-l2-5-import</vrf-import>
+            <vrf-export>_contrail_vlan100-l2-5-export</vrf-export>
             <vrf-target>
                 <community>target:64512:1</community>
                 <auto>
                 </auto>
             </vrf-target>
         </switch-options>
+        <vlans>
+            <vlan>
+                <name>contrail_vlan100-l2-5</name>
+                <vlan-id>4094</vlan-id>
+                <interface>
+                    <name>xe-0/0/35.0</name>
+                </interface>
+                <vxlan>
+                    <vni>5</vni>
+                </vxlan>
+            </vlan>
+        </vlans>
     </groups>
     <groups>
         <name>__contrail_overlay_lag__</name>

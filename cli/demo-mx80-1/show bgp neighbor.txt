@@ -38,10 +38,10 @@ Peer: 192.168.30.1+179 AS 65301 Local: 192.168.30.0+65350 AS 65401
     Received prefixes:            9
     Accepted prefixes:            9
     Suppressed due to damping:    0
-    Advertised prefixes:          3
-  Last traffic (seconds): Received 1971976 Sent 56744 Checked 1971976
-  Input messages:  Total 18060	Updates 20	Refreshes 0	Octets 343715
-  Output messages: Total 18274	Updates 9	Refreshes 0	Octets 347475
+    Advertised prefixes:          2
+  Last traffic (seconds): Received 2055633 Sent 76051 Checked 2055633
+  Input messages:  Total 21086	Updates 26	Refreshes 0	Octets 401356
+  Output messages: Total 21362	Updates 11	Refreshes 0	Octets 406208
   Output Queue[4]: 0            (inet.0, inet-unicast)
 
 Peer: 192.168.40.1+179 AS 65302 Local: 192.168.40.0+53269 AS 65401
@@ -83,8 +83,8 @@ Peer: 192.168.40.1+179 AS 65302 Local: 192.168.40.0+53269 AS 65401
     Received prefixes:            9
     Accepted prefixes:            9
     Suppressed due to damping:    0
-    Advertised prefixes:          8
-  Last traffic (seconds): Received 1971976 Sent 56744 Checked 1971976
-  Input messages:  Total 18060	Updates 20	Refreshes 0	Octets 343708
-  Output messages: Total 18279	Updates 14	Refreshes 0	Octets 347755
+    Advertised prefixes:          9
+  Last traffic (seconds): Received 2055633 Sent 75667 Checked 2055633
+  Input messages:  Total 21087	Updates 28	Refreshes 0	Octets 401464
+  Output messages: Total 21367	Updates 17	Refreshes 0	Octets 406524
   Output Queue[4]: 0            (inet.0, inet-unicast)

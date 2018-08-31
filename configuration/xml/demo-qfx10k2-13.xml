@@ -1,4 +1,4 @@
-<configuration changed-seconds="1535585810" changed-localtime="2018-08-29 23:36:50 UTC">
+<configuration changed-seconds="1535648131" changed-localtime="2018-08-30 16:55:31 UTC">
     <version>17.4R1.16</version>
     <groups>
         <name>POC_Lab</name>
@@ -199,11 +199,11 @@
                     <multipath>
                     </multipath>
                     <neighbor>
-                        <name>192.168.255.1</name>
+                        <name>192.168.255.102</name>
                         <peer-as>64512</peer-as>
                     </neighbor>
                     <neighbor>
-                        <name>192.168.255.2</name>
+                        <name>192.168.255.101</name>
                         <peer-as>64512</peer-as>
                     </neighbor>
                     <neighbor>
@@ -211,11 +211,11 @@
                         <peer-as>64512</peer-as>
                     </neighbor>
                     <neighbor>
-                        <name>192.168.255.102</name>
+                        <name>192.168.255.1</name>
                         <peer-as>64512</peer-as>
                     </neighbor>
                     <neighbor>
-                        <name>192.168.255.101</name>
+                        <name>192.168.255.2</name>
                         <peer-as>64512</peer-as>
                     </neighbor>
                     <neighbor>

@@ -1,4 +1,73 @@
 
+Peer: 10.1.0.2+179 AS 64512    Local: 192.168.255.4+58985 AS 64512
+  Group: _contrail_asn-64512   Routing-Instance: master
+  Forwarding routing-instance: master  
+  Type: Internal    State: Established    Flags: <Sync>
+  Last State: OpenConfirm   Last Event: RecvKeepAlive
+  Last Error: None
+  Export: [ _contrail_ibgp_export_policy ] 
+  Options: <Preference LocalAddress HoldTime AddressFamily PeerAS Multipath Rib-group Refresh>
+  Address families configured: route-target evpn
+  Local Address: 192.168.255.4 Holdtime: 90 Preference: 170
+  Number of flaps: 0
+  Peer ID: 10.1.0.2        Local ID: 192.168.255.4     Active Holdtime: 90
+  Keepalive Interval: 30         Group index: 1    Peer index: 5    SNMP index: 155   
+  I/O Session Thread: bgpio-0 State: Enabled
+  BFD: disabled, down
+  NLRI for restart configured on peer: route-target evpn
+  NLRI advertised by peer: inet-vpn-unicast inet6-vpn-unicast route-target evpn
+  NLRI for this session: route-target evpn
+  Peer does not support Refresh capability
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  NLRI that restart is negotiated for: route-target evpn
+  NLRI of received end-of-rib markers: route-target evpn
+  NLRI of all end-of-rib markers sent: route-target evpn
+  Peer does not support LLGR Restarter or Receiver functionality
+  Peer does not support 4 byte AS extension
+  Peer does not support Addpath
+  Table bgp.rtarget.0 Bit: 10000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              3
+    Received prefixes:            3
+    Accepted prefixes:            3
+    Suppressed due to damping:    0
+    Advertised prefixes:          3
+  Table bgp.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+  Table default-switch.evpn.0 Bit: 40000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Table __default_evpn__.evpn.0 Bit: 50000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Last traffic (seconds): Received 4848300 Sent 73359 Checked 4848300
+  Input messages:  Total 2477	Updates 3	Refreshes 0	Octets 47155
+  Output messages: Total 2698	Updates 3	Refreshes 0	Octets 51416
+  Output Queue[0]: 0            (bgp.rtarget.0, route-target)
+  Output Queue[3]: 0            (default-switch.evpn.0, evpn)
+  Output Queue[4]: 0            (__default_evpn__.evpn.0, evpn)
+
 Peer: 192.168.10.6+179 AS 65301 Local: 192.168.10.7+61877 AS 65004
   Description: 5c10-qfx2
   Group: IPFAB-UNDER           Routing-Instance: master
@@ -39,9 +108,9 @@ Peer: 192.168.10.6+179 AS 65301 Local: 192.168.10.7+61877 AS 65004
     Accepted prefixes:            9
     Suppressed due to damping:    0
     Advertised prefixes:          1
-  Last traffic (seconds): Received 4764662 Sent 1882088 Checked 4764662
-  Input messages:  Total 71439	Updates 154	Refreshes 0	Octets 1361749
-  Output messages: Total 72126	Updates 3	Refreshes 0	Octets 1370506
+  Last traffic (seconds): Received 4848300 Sent 1965726 Checked 4848300
+  Input messages:  Total 74465	Updates 160	Refreshes 0	Octets 1419429
+  Output messages: Total 75168	Updates 3	Refreshes 0	Octets 1428304
   Output Queue[2]: 0            (inet.0, inet-unicast)
 
 Peer: 192.168.20.6+179 AS 65302 Local: 192.168.20.7+62934 AS 65004
@@ -84,7 +153,357 @@ Peer: 192.168.20.6+179 AS 65302 Local: 192.168.20.7+62934 AS 65004
     Accepted prefixes:            9
     Suppressed due to damping:    0
     Advertised prefixes:          1
-  Last traffic (seconds): Received 4764662 Sent 1882088 Checked 4764662
-  Input messages:  Total 71458	Updates 173	Refreshes 0	Octets 1362933
-  Output messages: Total 72126	Updates 3	Refreshes 0	Octets 1370506
+  Last traffic (seconds): Received 4848300 Sent 1965726 Checked 4848300
+  Input messages:  Total 74485	Updates 181	Refreshes 0	Octets 1420767
+  Output messages: Total 75167	Updates 3	Refreshes 0	Octets 1428285
   Output Queue[2]: 0            (inet.0, inet-unicast)
+
+Peer: 192.168.255.1+179 AS 64512 Local: 192.168.255.4+51242 AS 64512
+  Group: _contrail_asn-64512   Routing-Instance: master
+  Forwarding routing-instance: master  
+  Type: Internal    State: Established    Flags: <Sync>
+  Last State: OpenConfirm   Last Event: RecvKeepAlive
+  Last Error: None
+  Export: [ _contrail_ibgp_export_policy ] 
+  Options: <Preference LocalAddress HoldTime AddressFamily PeerAS Multipath Rib-group Refresh>
+  Address families configured: route-target evpn
+  Local Address: 192.168.255.4 Holdtime: 90 Preference: 170
+  Number of flaps: 0
+  Peer ID: 192.168.255.1   Local ID: 192.168.255.4     Active Holdtime: 90
+  Keepalive Interval: 30         Group index: 1    Peer index: 3    SNMP index: 153   
+  I/O Session Thread: bgpio-0 State: Enabled
+  BFD: disabled, down
+  NLRI for restart configured on peer: route-target evpn
+  NLRI advertised by peer: route-target evpn
+  NLRI for this session: route-target evpn
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  Restart flag received from the peer: Notification
+  NLRI that restart is negotiated for: route-target evpn
+  NLRI of received end-of-rib markers: route-target evpn
+  NLRI of all end-of-rib markers sent: route-target evpn
+  Peer does not support LLGR Restarter functionality
+  Peer supports 4 byte AS extension (peer-as 64512)
+  Peer does not support Addpath
+  Table bgp.rtarget.0 Bit: 10000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            1
+    Accepted prefixes:            1
+    Suppressed due to damping:    0
+    Advertised prefixes:          3
+  Table bgp.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+  Table default-switch.evpn.0 Bit: 40000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Table __default_evpn__.evpn.0 Bit: 50000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Last traffic (seconds): Received 4848300 Sent 73359 Checked 4848300
+  Input messages:  Total 2697	Updates 3	Refreshes 0	Octets 51309
+  Output messages: Total 2700	Updates 3	Refreshes 2	Octets 51462
+  Output Queue[0]: 0            (bgp.rtarget.0, route-target)
+  Output Queue[3]: 0            (default-switch.evpn.0, evpn)
+  Output Queue[4]: 0            (__default_evpn__.evpn.0, evpn)
+
+Peer: 192.168.255.2+179 AS 64512 Local: 192.168.255.4+61619 AS 64512
+  Group: _contrail_asn-64512   Routing-Instance: master
+  Forwarding routing-instance: master  
+  Type: Internal    State: Established    Flags: <Sync>
+  Last State: OpenConfirm   Last Event: RecvKeepAlive
+  Last Error: None
+  Export: [ _contrail_ibgp_export_policy ] 
+  Options: <Preference LocalAddress HoldTime AddressFamily PeerAS Multipath Rib-group Refresh>
+  Address families configured: route-target evpn
+  Local Address: 192.168.255.4 Holdtime: 90 Preference: 170
+  Number of flaps: 0
+  Peer ID: 192.168.255.2   Local ID: 192.168.255.4     Active Holdtime: 90
+  Keepalive Interval: 30         Group index: 1    Peer index: 4    SNMP index: 154   
+  I/O Session Thread: bgpio-0 State: Enabled
+  BFD: disabled, down
+  NLRI for restart configured on peer: route-target evpn
+  NLRI advertised by peer: route-target evpn
+  NLRI for this session: route-target evpn
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  Restart flag received from the peer: Notification
+  NLRI that restart is negotiated for: route-target evpn
+  NLRI of received end-of-rib markers: route-target evpn
+  NLRI of all end-of-rib markers sent: route-target evpn
+  Peer does not support LLGR Restarter functionality
+  Peer supports 4 byte AS extension (peer-as 64512)
+  Peer does not support Addpath
+  Table bgp.rtarget.0 Bit: 10000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            3
+    Accepted prefixes:            3
+    Suppressed due to damping:    0
+    Advertised prefixes:          3
+  Table bgp.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              1
+    Received prefixes:            1
+    Accepted prefixes:            1
+    Suppressed due to damping:    0
+  Table default-switch.evpn.0 Bit: 40000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              1
+    Received prefixes:            1
+    Accepted prefixes:            1
+    Suppressed due to damping:    0
+    Advertised prefixes:          1
+  Table __default_evpn__.evpn.0 Bit: 50000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Last traffic (seconds): Received 4848300 Sent 72748 Checked 4848300
+  Input messages:  Total 2704	Updates 8	Refreshes 2	Octets 51800
+  Output messages: Total 2703	Updates 6	Refreshes 2	Octets 51731
+  Output Queue[0]: 0            (bgp.rtarget.0, route-target)
+  Output Queue[3]: 0            (default-switch.evpn.0, evpn)
+  Output Queue[4]: 0            (__default_evpn__.evpn.0, evpn)
+
+Peer: 192.168.255.3+56448 AS 64512 Local: 192.168.255.4+179 AS 64512
+  Group: _contrail_asn-64512   Routing-Instance: master
+  Forwarding routing-instance: master  
+  Type: Internal    State: Established    Flags: <Sync>
+  Last State: OpenConfirm   Last Event: RecvKeepAlive
+  Last Error: None
+  Export: [ _contrail_ibgp_export_policy ] 
+  Options: <Preference LocalAddress HoldTime AddressFamily PeerAS Multipath Rib-group Refresh>
+  Address families configured: route-target evpn
+  Local Address: 192.168.255.4 Holdtime: 90 Preference: 170
+  Number of flaps: 0
+  Peer ID: 192.168.255.3   Local ID: 192.168.255.4     Active Holdtime: 90
+  Keepalive Interval: 30         Group index: 1    Peer index: 2    SNMP index: 152   
+  I/O Session Thread: bgpio-0 State: Enabled
+  BFD: disabled, down
+  NLRI for restart configured on peer: route-target evpn
+  NLRI advertised by peer: route-target evpn
+  NLRI for this session: route-target evpn
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  Restart flag received from the peer: Notification
+  NLRI that restart is negotiated for: route-target evpn
+  NLRI of received end-of-rib markers: route-target evpn
+  NLRI of all end-of-rib markers sent: route-target evpn
+  Peer does not support LLGR Restarter functionality
+  Peer supports 4 byte AS extension (peer-as 64512)
+  Peer does not support Addpath
+  Table bgp.rtarget.0 Bit: 10000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            1
+    Accepted prefixes:            1
+    Suppressed due to damping:    0
+    Advertised prefixes:          3
+  Table bgp.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+  Table default-switch.evpn.0 Bit: 40000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Table __default_evpn__.evpn.0 Bit: 50000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Last traffic (seconds): Received 4848300 Sent 73359 Checked 4848300
+  Input messages:  Total 2698	Updates 3	Refreshes 0	Octets 51380
+  Output messages: Total 2700	Updates 3	Refreshes 2	Octets 51462
+  Output Queue[0]: 0            (bgp.rtarget.0, route-target)
+  Output Queue[3]: 0            (default-switch.evpn.0, evpn)
+  Output Queue[4]: 0            (__default_evpn__.evpn.0, evpn)
+
+Peer: 192.168.255.101+179 AS 64512 Local: 192.168.255.4+55688 AS 64512
+  Group: _contrail_asn-64512   Routing-Instance: master
+  Forwarding routing-instance: master  
+  Type: Internal    State: Established    Flags: <Sync>
+  Last State: OpenConfirm   Last Event: RecvKeepAlive
+  Last Error: None
+  Export: [ _contrail_ibgp_export_policy ] 
+  Options: <Preference LocalAddress HoldTime AddressFamily PeerAS Multipath Rib-group Refresh>
+  Address families configured: route-target evpn
+  Local Address: 192.168.255.4 Holdtime: 90 Preference: 170
+  Number of flaps: 0
+  Peer ID: 192.168.255.101 Local ID: 192.168.255.4     Active Holdtime: 90
+  Keepalive Interval: 30         Group index: 1    Peer index: 1    SNMP index: 151   
+  I/O Session Thread: bgpio-0 State: Enabled
+  BFD: disabled, down
+  NLRI for restart configured on peer: route-target evpn
+  NLRI advertised by peer: route-target evpn
+  NLRI for this session: route-target evpn
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  Restart flag received from the peer: Notification
+  NLRI that restart is negotiated for: route-target evpn
+  NLRI of received end-of-rib markers: route-target evpn
+  NLRI of all end-of-rib markers sent: route-target evpn
+  Peer does not support LLGR Restarter functionality
+  Peer supports 4 byte AS extension (peer-as 64512)
+  Peer does not support Addpath
+  Table bgp.rtarget.0 Bit: 10000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            1
+    Accepted prefixes:            1
+    Suppressed due to damping:    0
+    Advertised prefixes:          3
+  Table bgp.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+  Table default-switch.evpn.0 Bit: 40000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Table __default_evpn__.evpn.0 Bit: 50000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Last traffic (seconds): Received 4848300 Sent 73359 Checked 4848300
+  Input messages:  Total 2681	Updates 3	Refreshes 0	Octets 51005
+  Output messages: Total 2701	Updates 3	Refreshes 2	Octets 51481
+  Output Queue[0]: 0            (bgp.rtarget.0, route-target)
+  Output Queue[3]: 0            (default-switch.evpn.0, evpn)
+  Output Queue[4]: 0            (__default_evpn__.evpn.0, evpn)
+
+Peer: 192.168.255.102+179 AS 64512 Local: 192.168.255.4+55124 AS 64512
+  Group: _contrail_asn-64512   Routing-Instance: master
+  Forwarding routing-instance: master  
+  Type: Internal    State: Established    Flags: <Sync>
+  Last State: OpenConfirm   Last Event: RecvKeepAlive
+  Last Error: None
+  Export: [ _contrail_ibgp_export_policy ] 
+  Options: <Preference LocalAddress HoldTime AddressFamily PeerAS Multipath Rib-group Refresh>
+  Address families configured: route-target evpn
+  Local Address: 192.168.255.4 Holdtime: 90 Preference: 170
+  Number of flaps: 0
+  Peer ID: 192.168.255.102 Local ID: 192.168.255.4     Active Holdtime: 90
+  Keepalive Interval: 30         Group index: 1    Peer index: 0    SNMP index: 150   
+  I/O Session Thread: bgpio-0 State: Enabled
+  BFD: disabled, down
+  NLRI for restart configured on peer: route-target evpn
+  NLRI advertised by peer: route-target evpn
+  NLRI for this session: route-target evpn
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  Restart flag received from the peer: Notification
+  NLRI that restart is negotiated for: route-target evpn
+  NLRI of received end-of-rib markers: route-target evpn
+  NLRI of all end-of-rib markers sent: route-target evpn
+  Peer does not support LLGR Restarter functionality
+  Peer supports 4 byte AS extension (peer-as 64512)
+  Peer does not support Addpath
+  Table bgp.rtarget.0 Bit: 10000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            1
+    Accepted prefixes:            1
+    Suppressed due to damping:    0
+    Advertised prefixes:          3
+  Table bgp.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+  Table default-switch.evpn.0 Bit: 40000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Table __default_evpn__.evpn.0 Bit: 50000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Last traffic (seconds): Received 4848300 Sent 73359 Checked 4848300
+  Input messages:  Total 2681	Updates 3	Refreshes 0	Octets 51005
+  Output messages: Total 2701	Updates 3	Refreshes 2	Octets 51481
+  Output Queue[0]: 0            (bgp.rtarget.0, route-target)
+  Output Queue[3]: 0            (default-switch.evpn.0, evpn)
+  Output Queue[4]: 0            (__default_evpn__.evpn.0, evpn)
