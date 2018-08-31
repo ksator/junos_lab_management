@@ -216,7 +216,7 @@ ls backup/
 
 ### rollback the running configuration to a previous version
 
-The playbook [**pb.rollback.yml**](pb.rollback.yml) playbook performs a configuration rollback on junos devices.
+The playbook [**pb.rollback.yml**](pb.rollback.yml) performs a configuration rollback on junos devices.
 
 Run this command to rollback 1 the whole network 
 ```
@@ -226,6 +226,20 @@ ansible-playbook pb.rollback.yml --extra-vars rbid=1
 Run this command to rollback 3 the group MX80 
 ```
 ansible-playbook pb.rollback.yml --extra-vars rbid=3 --limit MX80
+```
+
+### Zeroize your network
+
+The playbook [**pb.zeroize.yml**](pb.zeroize.yml) zeroizes the network. 
+
+Run this command to zeroize a device or a group
+```
+ansible-playbook pb.zeroize.yml --limit demo-qfx10k2-11
+```
+
+Run this command to zeroize the whole network 
+```
+ansible-playbook pb.zeroize.yml 
 ```
 
 
