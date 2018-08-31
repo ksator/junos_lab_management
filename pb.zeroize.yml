@@ -4,7 +4,7 @@
   gather_facts: no
   tasks:
   
-    - name: zero out the current configuration
+    - name: zeroize the current configuration
       junos_config:
           provider: "{{ credentials }}"
           zeroize: yes
