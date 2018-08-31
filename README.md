@@ -12,7 +12,7 @@ This repository has automation content to manage a lab with Junos devices.
 - The directory [**configuration**](configuration) has the junos configuration files collected when we run the playbook [**pb.collect.configuration.yml**](pb.collect.configuration.yml) 
 - The directory [**backup**](backup) has the junos configuration files automatically backed up by the playbooks: 
   - [**pb.configure.lines.yml**](pb.configure.lines.yml) 
-  - [**pb.configure.golden.yml**](pb.configure.golden.yml)
+  - [**pb.deploy.golden.yml**](pb.deploy.golden.yml)
 - The directory [**golden_configuration**](golden_configuration) has the junos configuration files for various demo.
   - The playbook [**pb.collect.golden.configuration.yml**](pb.collect.golden.configuration.yml) collects the running configuration on the junos devices and updates the directory [**golden.configuration**](golden_configuration) with these files.
   - The playbook [**pb.deploy.golden.yml**](pb.deploy.golden.yml) overwrites the running configuration on the junos devices with the files in the directory [**golden_configuration**](golden_configuration)
@@ -127,8 +127,8 @@ Run this command to overwrite the running configuration on the junos devices wit
 ansible-playbook pb.deploy.golden.yml --extra-vars lab=ospf
 ```
 
-The playbook [**pb.configure.golden.yml**](pb.configure.golden.yml) backs-up the current running configuration from the remote devices in the directory [**backup**](backup) before applying the golden configuration. 
-```	
+The playbook [**pb.deploy.golden.yml**](pb.deploy.golden.yml) backs-up the current running configuration from the remote devices in the directory [**backup**](backup) before applying the golden configuration. 
+``` 
 ls backup/
 ```
 
