@@ -50,6 +50,22 @@ Execute this [**python script**](python/locate.mac.address.py) to locate a mac a
 python ./python/locate.mac.address.py ac:1f:6b:8d:c4:52
 ```
 
+### check if some services are reachable on Junos devices
+
+The playbook [**pb.check.ports.availability.yml**](pb.check.ports.availability.yml) checks if Ansible can connect on some ports on Junos devices (ssh, telnet, ftp, netconf)  
+Run this command to execute this playbook for the whole network:
+```
+ansible-playbook pb.check.ports.availability.yml
+```
+
+### Collect the facts on junos devices and print them on the Ansible server
+
+The playbook [**pb.print.facts.yml**](pb.print.facts.yml) collects the facts on junos devices and prints them on the Ansible server. 
+Run this command to execute this playbook for the whole network:
+```
+ansible-playbook pb.print.facts.yml
+```
+
 ### Collect junos show commands 
 
 Edit the [**cli.yml**](group_vars/JUNOS/cli.yml) file to indicate the list of junos show commands you want to collect
@@ -132,6 +148,34 @@ The playbook [**pb.deploy.golden.yml**](pb.deploy.golden.yml) backs-up the curre
 ls backup/
 ```
 
+### Check which devices are not running their golden configuration
+
+In order to know which junos devices will have a configuration change if you load the golden configuration files, execute the playbook [pb.deploy.golden.yml](pb.deploy.golden.yml) in dry run mode.
+This won’t load the golden configuration.
+
+```
+ansible-playbook pb.deploy.golden.yml --check
+```
+Run this command to do it for one device/group. 
+This won’t load the golden configuration.
+
+```
+ansible-playbook pb.deploy.golden.yml --check --limit demo-qfx10k2-11
+```
+
+### Get the difference between the configuration running on devices and their golden configuration
+
+In order to know if a junos device will have a configuration change if you load its golden configuration file, and also to know the difference between its running configuration and its golden configuration, run this command.
+This won’t change the junos configuration.
+```
+ansible-playbook pb.deploy.golden.yml --check --diff --limit demo-qfx10k2-11
+```
+Run this command to do it for the whole network.
+This won’t load the golden configuration.
+```
+ansible-playbook pb.deploy.golden.yml --check --diff 
+```
+
 ### Configure junos devices with set/delete commands
 
 The playbook [**pb.configure.lines.yml**](pb.configure.lines.yml) configures the junos devices with set/delete commands. 
@@ -184,14 +228,6 @@ Run this command to rollback 3 the group MX80
 ansible-playbook pb.rollback.yml --extra-vars rbid=3 --limit MX80
 ```
 
-
-### check if some services are reachable on Junos devices
-
-The playbook [**pb.check.ports.availability.yml**](pb.check.ports.availability.yml) checks if Ansible can connect on some ports on Junos devices (ssh, telnet, ftp, netconf)  
-Run this command to execute this playbook for the whole network:
-```
-ansible-playbook pb.check.ports.availability.yml
-```
 
 ### Looking for more Junos automation examples:
 
