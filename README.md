@@ -15,7 +15,7 @@ This repository has automation content to manage a lab with Junos devices.
   - [**pb.deploy.golden.yml**](pb.deploy.golden.yml)
 - The directory [**golden_configuration**](golden_configuration) has the junos configuration files for various demo.
   - The playbook [**pb.collect.golden.configuration.yml**](pb.collect.golden.configuration.yml) collects the running configuration on the junos devices and updates the directory [**golden.configuration**](golden_configuration) with these files.
-  - The playbook [**pb.deploy.golden.yml**](pb.deploy.golden.yml) overwrites the running configuration on the junos devices with the files in the directory [**golden_configuration**](golden_configuration)
+  - The playbook [**pb.deploy.golden.configuration.yml**](pb.deploy.golden.yml) overwrites the running configuration on the junos devices with the files in the directory [**golden_configuration**](golden_configuration)
 - The directory [**python**](python) has the python scripts
    - The file [**inventory.py**](python/inventory.py) creates a python list of devices ip address based on the ansible inventory file [**hosts**](hosts)
    - The file [**credentials.py**](python/credentials.py) gets the devices username and password from the ansible variables file  [**credentials.yml**](/group_vars/JUNOS/credentials.yml)
@@ -129,38 +129,38 @@ ls golden_configuration/ospf
 
 ### Overwrite the running configuration on junos devices with a golden configuration
 
-The playbook [**pb.deploy.golden.yml**](pb.deploy.golden.yml) overwrites the running configuration on the junos devices with the files in the directory [**golden_configuration**](golden_configuration).  
+The playbook [**pb.deploy.golden.configuration.yml**](pb.deploy.golden.configuration.yml) overwrites the running configuration on the junos devices with the files in the directory [**golden_configuration**](golden_configuration).  
 
 Example 1: 
 Run this command to overwrite the running configuration on the junos devices with the files in the directory [**golden_configuration/bgp**](golden_configuration/bgp).  
 ```
-ansible-playbook pb.deploy.golden.yml --extra-vars lab=bgp
+ansible-playbook pb.deploy.golden.configuration.yml --extra-vars lab=bgp
 ```
 
 Example 2: 
 Run this command to overwrite the running configuration on the junos devices with the files in the directory [**golden_configuration/ospf**](golden_configuration/ospf).  
 ```
-ansible-playbook pb.deploy.golden.yml --extra-vars lab=ospf
+ansible-playbook pb.deploy.golden.configuration.yml --extra-vars lab=ospf
 ```
 
-The playbook [**pb.deploy.golden.yml**](pb.deploy.golden.yml) backs-up the current running configuration from the remote devices in the directory [**backup**](backup) before applying the golden configuration. 
+The playbook [**pb.deploy.golden.configuration.yml**](pb.deploy.golden.configuration.yml) backs-up the current running configuration from the remote devices in the directory [**backup**](backup) before applying the golden configuration. 
 ``` 
 ls backup/
 ```
 
 ### Check which devices are not running their golden configuration
 
-In order to know which junos devices will have a configuration change if you load the golden configuration files, execute the playbook [pb.deploy.golden.yml](pb.deploy.golden.yml) in dry run mode.
+In order to know which junos devices will have a configuration change if you load the golden configuration files, execute the playbook [pb.deploy.golden.configuration.yml](pb.deploy.golden.configuration.yml) in dry run mode.
 This won’t load the golden configuration.
 
 ```
-ansible-playbook pb.deploy.golden.yml --extra-vars lab=ospf --check
+ansible-playbook pb.deploy.golden.configuration.yml --extra-vars lab=ospf --check
 ```
 Run this command to do it for one device/group. 
 This won’t load the golden configuration.
 
 ```
-ansible-playbook pb.deploy.golden.yml ---extra-vars lab=ospf -check --limit demo-qfx10k2-11
+ansible-playbook pb.deploy.golden.configuration.yml ---extra-vars lab=ospf -check --limit demo-qfx10k2-11
 ```
 
 ### Get the difference between the configuration running on devices and their golden configuration
@@ -168,12 +168,12 @@ ansible-playbook pb.deploy.golden.yml ---extra-vars lab=ospf -check --limit demo
 In order to know if a junos device will have a configuration change if you load its golden configuration file, and also to know the difference between its running configuration and its golden configuration, run this command.
 This won’t change the junos configuration.
 ```
-ansible-playbook pb.deploy.golden.yml --extra-vars lab=bgp --check --diff --limit demo-qfx10k2-11
+ansible-playbook pb.deploy.golden.configuration.yml --extra-vars lab=bgp --check --diff --limit demo-qfx10k2-11
 ```
 Run this command to do it for the whole network.
 This won’t load the golden configuration.
 ```
-ansible-playbook pb.deploy.golden.yml --extra-vars lab=bgp --check --diff 
+ansible-playbook pb.deploy.golden.configuration.yml --extra-vars lab=bgp --check --diff 
 ```
 
 ### Configure junos devices with set/delete commands
