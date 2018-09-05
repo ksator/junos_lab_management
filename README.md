@@ -160,7 +160,7 @@ Run this command to do it for one device/group.
 This won’t load the golden configuration.
 
 ```
-ansible-playbook pb.deploy.golden.configuration.yml ---extra-vars lab=ospf -check --limit demo-qfx10k2-11
+ansible-playbook pb.deploy.golden.configuration.yml --extra-vars lab=ospf -check --limit demo-qfx10k2-11
 ```
 
 ### Get the difference between the configuration running on devices and their golden configuration
