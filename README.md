@@ -105,12 +105,12 @@ ls configuration
 
 ### Update the golden configuration files
 
-The playbook [**pb.collect.golden.yml**](pb.collect.golden.yml) collects the running configuration on the junos devices and updates the directory [**golden_configuration**](golden_configuration) with these files.
+The playbook [**pb.collect.golden.configuration.yml**](pb.collect.golden.configuration.yml) collects the running configuration on the junos devices and updates the directory [**golden_configuration**](golden_configuration) with these files.
 
 Example 1: 
 Run this command to collect the configuration running on the junos devices and updates the directory [**golden_configuration/bgp**](golden_configuration/bgp) with these files.
 ```
-ansible-playbook pb.collect.golden.yml --extra-vars lab=bgp
+ansible-playbook pb.collect.golden.configuration.yml --extra-vars lab=bgp
 ```
 The golden configuration files are available in the directory [**golden_configuration/bgp**](golden_configuration/bgp)
 ```
@@ -119,7 +119,7 @@ ls golden_configuration/bgp
 Example 2: 
 Run this command to collect the running configuration on the junos devices and updates the directory [**golden_configuration/ospf**](golden_configuration/ospf) with these files.
 ```
-ansible-playbook pb.collect.golden.yml --extra-vars lab=ospf
+ansible-playbook pb.collect.golden.configuration.yml --extra-vars lab=ospf
 ```
 The golden configuration files are available in the directory [**golden_configuration/ospf**](golden_configuration/ospf)
 ```
