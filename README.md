@@ -33,7 +33,7 @@ cd xxxxx/
 ### Install requirements
 ```
 sudo pip install requirements.txt -r 
-ansible-galaxy install Juniper.junos,2.1.0
+sudo ansible-galaxy install Juniper.junos,2.1.0
 ```
 ### Verify
 ```
@@ -52,10 +52,10 @@ python ./python/locate.mac.address.py ac:1f:6b:8d:c4:52
 
 ### check if some services are reachable on Junos devices
 
-The playbook [**pb.check.ports.availability.yml**](pb.check.ports.availability.yml) checks if Ansible can connect on some ports on Junos devices (ssh, telnet, ftp, netconf)  
+The playbook [**pb.check.reachability.yml**](pb.check.reachability.yml) checks if Ansible can connect on some ports on Junos devices (ssh, telnet, ftp, netconf)  
 Run this command to execute this playbook for the whole network:
 ```
-ansible-playbook pb.check.ports.availability.yml
+ansible-playbook pb.check.reachability.yml
 ```
 
 ### Collect the facts on junos devices and print them on the Ansible server
