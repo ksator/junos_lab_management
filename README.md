@@ -15,7 +15,7 @@ This repository has automation content to manage a lab with Junos devices.
   - [**pb.deploy.golden.yml**](pb.deploy.golden.yml)
 - The directory [**golden_configuration**](golden_configuration) has the junos configuration files for various demo.
   - The playbook [**pb.collect.golden.configuration.yml**](pb.collect.golden.configuration.yml) collects the running configuration on the junos devices and updates the directory [**golden.configuration**](golden_configuration) with these files.
-  - The playbook [**pb.deploy.golden.configuration.yml**](pb.deploy.golden.yml) overwrites the running configuration on the junos devices with the files in the directory [**golden_configuration**](golden_configuration)
+  - The playbook [**pb.deploy.golden.configuration.yml**](pb.deploy.golden.configuration.yml) overwrites the running configuration on the junos devices with the files in the directory [**golden_configuration**](golden_configuration)
 - The directory [**python**](python) has the python scripts
    - The file [**inventory.py**](python/inventory.py) creates a python list of devices ip address based on the ansible inventory file [**hosts**](hosts)
    - The file [**credentials.py**](python/credentials.py) gets the devices username and password from the ansible variables file  [**credentials.yml**](/group_vars/JUNOS/credentials.yml)
