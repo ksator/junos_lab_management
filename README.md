@@ -27,8 +27,8 @@ This repository has automation content to manage a lab with Junos devices.
 
 
 ```
-git clone https://github.com/ksator/xxxxxx.git
-cd xxxxx/
+git clone https://github.com/ksator/junos_lab_management.git
+cd junos_lab_management/
 ```
 ### Install requirements
 ```
