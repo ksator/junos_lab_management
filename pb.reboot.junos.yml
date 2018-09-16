@@ -1,0 +1,14 @@
+- name: reboot Junos devices
+  hosts: target
+  connection: local
+  gather_facts: no
+  
+  roles:
+    - Juniper.junos
+
+  tasks:
+
+    - name: reboot Junos devices
+      juniper_junos_system:
+          provider: "{{ credentials }}"
+          action: "reboot"
