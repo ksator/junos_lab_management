@@ -242,6 +242,27 @@ Run this command to zeroize the whole network
 ansible-playbook pb.zeroize.yml 
 ```
 
+### Reboot Junos devices 
+
+The playbook [**pb.reboot.junos.yml**](pb.reboot.junos.yml) reboots Junos devices.  
+This is the equivalent of the ```request system reboot``` CLI command.
+
+Run this command to reboot a device
+```
+$ ansible-playbook pb.reboot.junos.yml --extra-vars target=demo-qfx5100-8
+```
+
+Run this command to reboot a group of devices
+```
+$ ansible-playbook pb.reboot.junos.yml --extra-vars target=QFX
+```
+
+Run this command to reboot all Junos devices
+```
+$ ansible-playbook pb.reboot.junos.yml --extra-vars target=JUNOS
+```
+
+
 
 ### Looking for more Junos automation examples:
 
