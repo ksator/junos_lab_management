@@ -249,17 +249,17 @@ This is the equivalent of the ```request system reboot``` CLI command.
 
 Run this command to reboot a device
 ```
-$ ansible-playbook pb.reboot.junos.yml --extra-vars target=demo-qfx5100-8
+ansible-playbook pb.reboot.junos.yml --extra-vars target=demo-qfx5100-8
 ```
 
 Run this command to reboot a group of devices
 ```
-$ ansible-playbook pb.reboot.junos.yml --extra-vars target=QFX
+ansible-playbook pb.reboot.junos.yml --extra-vars target=QFX
 ```
 
 Run this command to reboot all Junos devices
 ```
-$ ansible-playbook pb.reboot.junos.yml --extra-vars target=JUNOS
+ansible-playbook pb.reboot.junos.yml --extra-vars target=JUNOS
 ```
 
 
